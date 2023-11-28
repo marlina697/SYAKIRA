@@ -459,9 +459,9 @@ print_success "Konfigurasi Packet"
 
 function ssh(){
 clear
-print_install "Memasang Password SSH"
-    wget -O /etc/pam.d/common-password "${REPO}limit/password"
-chmod +x /etc/pam.d/common-password
+#print_install "Memasang Password SSH"
+#   wget -O /etc/pam.d/common-password "${REPO}limit/password"
+#chmod +x /etc/pam.d/common-password
 
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
     debconf-set-selections <<<"keyboard-configuration keyboard-configuration/altgr select The default for the keyboard layout"
@@ -527,7 +527,7 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # // set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
-print_success "Password SSH"
+#print_success "Password SSH"
 }
 
 function udp_mini(){
